@@ -13,7 +13,7 @@ func TestExample2(t *testing.T) {
 
 func TestChallenge2(t *testing.T) {
 	const expected = 1737
-	var actual = Challenge2File("2/measurements.txt")
+	var actual = Challenge2File("2/2-measurements.txt")
 	if actual != expected {
 		t.Errorf("Number larger than previous incorrect, got: %d, want: %d.", actual, expected)
 	}
