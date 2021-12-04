@@ -40,9 +40,8 @@ func StringToCommand(s []string) []Command {
 	for i := 0; i < len(s); i++ {
 		s := strings.Split(s[i], " ")
 		var command = s[0]
-		var direction, _ = strconv.Atoi(s[1])
-		output[i] = Command{command, direction}
+		var amount, _ = strconv.Atoi(s[1])
+		output[i] = Command{command, amount}
 	}
 	return output
-
 }
