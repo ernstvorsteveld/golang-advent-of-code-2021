@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func ReadMeasurements(f string) []string {
@@ -32,4 +33,16 @@ func StringToIn(s []string) []int {
 		output[i], _ = strconv.Atoi(s[i])
 	}
 	return output
+}
+
+func StringToCommand(s []string) []Command {
+	var output = make([]Command, len(s))
+	for i := 0; i < len(s); i++ {
+		s := strings.Split(s[i], " ")
+		var command = s[0]
+		var direction, _ = strconv.Atoi(s[1])
+		output[i] = Command{command, direction}
+	}
+	return output
+
 }

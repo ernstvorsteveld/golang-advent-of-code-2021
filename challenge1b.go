@@ -1,11 +1,11 @@
 package main
 
-func Challenge2File(s string) int {
+func Challenge1bFile(s string) int {
 	var depths = StringToIn(ReadMeasurements(s))
-	return Challenge2(depths)
+	return Challenge1b(depths)
 }
 
-func Challenge2(depths []int) int {
+func Challenge1b(depths []int) int {
 	var numLarger = 0
 	var previous = getMultiMeasure(depths, 3, 0)
 	for i := 0; i < len(depths); i++ {

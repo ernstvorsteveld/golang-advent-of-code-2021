@@ -2,12 +2,12 @@ package main
 
 // How many measurements are larger than the previous measurement?
 
-func Challenge1File(s string) int {
+func Challenge1aFile(s string) int {
 	var depths = StringToIn(ReadMeasurements(s))
-	return Challenge1(depths)
+	return Challenge1a(depths)
 }
 
-func Challenge1(depths []int) int {
+func Challenge1a(depths []int) int {
 	var numLarger = 0
 	var previous = depths[0]
 	for i := 0; i < len(depths); i++ {
