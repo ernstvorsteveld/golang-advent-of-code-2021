@@ -1,1 +1,1 @@
-# advent-of-code-2021-1
+# advent-of-code-2021
