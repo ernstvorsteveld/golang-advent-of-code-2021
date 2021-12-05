@@ -11,48 +11,34 @@ func Challenge3a(commands []string) (int64, int64) {
 	length := len(commands[0])
 	numberOnes := make([]int, length)
 	for i := 0; i < length; i++ {
-		numberOnes[i] = CountBits(commands, i, "1")
+		numberOnes[i] = Count(commands, i, "1")
 	}
-	g := GammaRate(numberOnes, len(commands))
-	e := EpsilonRate(numberOnes, len(commands))
+	g := Rate(numberOnes, len(commands), "1", "0")
+	e := Rate(numberOnes, len(commands), "0", "1")
 	return g, e
 }
 
-func CountBits(commands []string, p int, c string) int {
+func Count(commands []string, p int, ch string) int {
 	numberOnes := 0
 	for i := 0; i < len(commands); i++ {
 		c := commands[i][p]
-		if c == '1' {
+		if string(c) == ch {
 			numberOnes++
 		}
 	}
 	return numberOnes
 }
 
-func GammaRate(n []int, length int) int64 {
+func Rate(n []int, length int, posVal string, negVal string) int64 {
 	count := len(n)
 	result := ""
 	for i := 0; i < count; i++ {
 		if n[i] > length/2 {
-			result += "1"
+			result += posVal
 		} else {
-			result += "0"
+			result += negVal
 		}
 	}
-	gammaRate, _ := strconv.ParseInt(result, 2, 64)
-	return gammaRate
-}
-
-func EpsilonRate(n []int, length int) int64 {
-	count := len(n)
-	result := ""
-	for i := 0; i < count; i++ {
-		if n[i] > length/2 {
-			result += "0"
-		} else {
-			result += "1"
-		}
-	}
-	gammaRate, _ := strconv.ParseInt(result, 2, 64)
-	return gammaRate
+	rate, _ := strconv.ParseInt(result, 2, 64)
+	return rate
 }
