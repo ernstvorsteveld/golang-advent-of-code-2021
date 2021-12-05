@@ -12,7 +12,7 @@ func TestExample3aSimple(t *testing.T) {
 	if actualGammaRate != expectedGammaRate {
 		t.Errorf("Gamma Rate incorrect, got: %d, want: %d.", actualGammaRate, expectedGammaRate)
 	}
-	if actualGammaRate != expectedGammaRate {
+	if actualEpsilonRate != expectedEpsilonRate {
 		t.Errorf("Epsilon Rate incorrect, got: %d, want: %d.", actualEpsilonRate, expectedEpsilonRate)
 	}
 	fmt.Println(actualEpsilonRate * actualGammaRate)
@@ -25,7 +25,7 @@ func TestExample3aChallenge(t *testing.T) {
 	if actualGammaRate != expectedGammaRate {
 		t.Errorf("Gamma Rate incorrect, got: %d, want: %d.", actualGammaRate, expectedGammaRate)
 	}
-	if actualGammaRate != expectedGammaRate {
+	if actualEpsilonRate != expectedEpsilonRate {
 		t.Errorf("Epsilon Rate incorrect, got: %d, want: %d.", actualEpsilonRate, expectedEpsilonRate)
 	}
 	fmt.Println(actualEpsilonRate * actualGammaRate)

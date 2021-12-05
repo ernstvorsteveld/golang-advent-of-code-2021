@@ -27,5 +27,5 @@ func TestExample2aChallenge(t *testing.T) {
 	if actualHorizontal != expectedHorizontal {
 		t.Errorf("Depth not incorrect, got: %d, want: %d.", actualDepth, expectedDepth)
 	}
-	fmt.Println(expectedHorizontal * expectedDepth)
+	fmt.Println(actualHorizontal * actualHorizontal)
 }
